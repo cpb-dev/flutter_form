@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Form Application',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -47,61 +47,74 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const Padding(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
-            child: TextField(
+    return Form(
+      key: _formKey,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Column(
+            children: [
+              TextFormField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: "Type a Message",
-            ),
-            ),
-            ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide: BorderSide.none,
+                  ),
 
+                  labelText: "First Name",
+
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  prefixIcon: const Icon(Icons.person),
+                ),
+                validator: (value) {
+                  if(value == null || value.isEmpty){
+                    return "Please add First Name!";
+                  } return null;
+                  },
+              )
+            ],
+          ),
+            Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      borderSide: BorderSide.none,
+                    ),
+
+                    labelText: "Surname",
+
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.person),
+                  ),
+                  validator: (value) {
+                    if(value == null || value.isEmpty){
+                      return "Please add Surname!";
+                    } return null;
+                  },
+                )
+              ]
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Processing Data")),);
+                }
+              },
+              child: const Text("Submit"),
+            ),
           ],
-
         ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-
     );
+
   }
 }
