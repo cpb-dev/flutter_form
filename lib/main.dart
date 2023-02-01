@@ -42,16 +42,37 @@ class _MyHomePageState extends State<MyHomePage> {
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget> [
+
             TextFormField(
               // The validator receives the text that the user has entered.
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
+                  return 'Please enter First Name';
                 }
                 return null;
               },
+              decoration: InputDecoration(
+                labelText: "First Name",
+                contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                border: UnderlineInputBorder(),
+              ),
             ),
+            TextFormField(
+              // The validator receives the text that the user has entered.
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Surname';
+                }
+                return null;
+              },
+              decoration: InputDecoration(
+                labelText: "Surname",
+                contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                border: UnderlineInputBorder(),
+              ),
+            ),
+
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: ElevatedButton(
