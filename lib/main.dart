@@ -41,6 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Form(
         key: _formKey,
         child: Column(
+          //TODO: Change the column to a container to make more official
+          //TODO: Figure how to put 2 columns in a row for first and surnames
+
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
 
