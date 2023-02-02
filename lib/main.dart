@@ -31,6 +31,50 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final _formKey = GlobalKey<FormState>();
 
+  final nameRow = Container(
+    padding: const EdgeInsets.all(20),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+        children: [
+          TextFormField(
+          // The validator receives the text that the user has entered.
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter First Name';
+            }
+            return null;
+          },
+          decoration: InputDecoration(
+            labelText: "First Name",
+            border: UnderlineInputBorder(),
+          ),
+        ),
+        ],
+        ),
+        Column(
+          children: [
+        TextFormField(
+          // The validator receives the text that the user has entered.
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter Surname';
+            }
+            return null;
+          },
+          decoration: InputDecoration(
+            labelText: "Surname",
+            border: UnderlineInputBorder(),
+          ),
+        ),
+      ],
+          ),
+          ],
+    ),
+
+  );
+
   @override
   Widget build(BuildContext context) {
 
@@ -46,35 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
-
-            TextFormField(
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter First Name';
-                }
-                return null;
-              },
-              decoration: InputDecoration(
-                labelText: "First Name",
-                contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                border: UnderlineInputBorder(),
-              ),
-            ),
-            TextFormField(
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter Surname';
-                }
-                return null;
-              },
-              decoration: InputDecoration(
-                labelText: "Surname",
-                contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                border: UnderlineInputBorder(),
-              ),
-            ),
+            nameRow,
 
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
