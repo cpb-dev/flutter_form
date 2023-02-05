@@ -113,6 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   decoration: InputDecoration(
                     labelText: "Password",
+                    hintText: AutofillHints.password,
                     border: UnderlineInputBorder(),
                   ),
                 ),
@@ -131,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   decoration: InputDecoration(
                     labelText: "Retype Password",
+                    hintText: AutofillHints.password,
                     border: UnderlineInputBorder(),
                   ),
                 ),
