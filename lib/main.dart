@@ -43,99 +43,113 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Form(
         key: _formKey,
         child: Column(
-          //TODO: Change the column to a container to make more official
-          //TODO: Figure how to put 2 columns in a row for first and surnames
-
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
             Column(
               children: [
-                TextFormField(
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter First Name';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: "First Name",
-                    border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  child: TextFormField(
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter First Name';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: "First Name",
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
-                ),
+                )
+
               ],
             ),
             Column(
               children: [
-                TextFormField(
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter Surname';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: "Surname",
-                    border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+                  child: TextFormField(
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter Surname';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: "Surname",
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
 
             Column(
               children: [
-                TextFormField(
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please Enter an Email!';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: "Email",
-                    border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  child: TextFormField(
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please Enter an Email!';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: "Email",
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
 
             Column(
               children: [
-                TextFormField(
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter Password';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    hintText: AutofillHints.password,
-                    border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  child: TextFormField(
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter Password';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      hintText: AutofillHints.password,
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
 
             Column(
               children: [
-                TextFormField(
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter Password correctly again!';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: "Retype Password",
-                    hintText: AutofillHints.password,
-                    border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  child: TextFormField(
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter Password correctly again!';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: "Retype Password",
+                      hintText: AutofillHints.password,
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
-                ),
+                )
+
               ],
             ),
 
